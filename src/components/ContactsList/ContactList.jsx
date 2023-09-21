@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from './ContactsList.module.css';
 
 export const ContactList = ({ contacts, onDeleteContact }) => {
   console.log(contacts);
   return (
     <div>
-      <h3>Contacts</h3>
+      <h3 className={css.contacts_text}>Contacts</h3>
       <table>
         <thead>
           <tr>
@@ -19,7 +20,11 @@ export const ContactList = ({ contacts, onDeleteContact }) => {
               <td>{name}</td>
               <td>{number}</td>
               <td>
-                <button value={id} onClick={() => onDeleteContact(id)}>
+                <button
+                  className={css.delete_btn}
+                  value={id}
+                  onClick={() => onDeleteContact(id)}
+                >
                   Delete
                 </button>
               </td>
